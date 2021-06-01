@@ -1,0 +1,285 @@
+.plan-desc {
+  display: flex;
+  padding-bottom: 22px;
+
+  flex-direction: column;
+}
+
+.plan-desc__item {
+  position: relative;
+
+  display: flex;
+  width: 220px;
+
+  flex-direction: column;
+}
+
+.plan-desc__item:not(:last-child) {
+  margin-bottom: 27px;
+}
+
+.plan-desc__item::before {
+  content: "";
+
+  position: absolute;
+  top: 8px;
+  left: -13px;
+
+  width: 13px;
+  height: 2px;
+
+  background-color: $dark-slate-blue;
+  border-radius: 1px;
+}
+
+
+.plan-desc__item:not(:last-child)::after {
+  content: "";
+
+  position: absolute;
+  top: 8px;
+  left: -13px;
+
+  width: 2px;
+  height: 281px;
+
+  background-color: $dark-slate-blue;
+  border-radius: 1px;
+}
+
+.plan-desc__text {
+  width: 220px;
+  height: 220px;
+  padding-top: 10px;
+  padding-right: 13px;
+  padding-bottom: 9px;
+  padding-left: 14px;
+
+  font-size: 16px;
+  line-height: 22px;
+
+  color: $medium-grey;
+  background-color: $white;
+  border-radius: 4px;
+  border: solid 1px $midnight-express;
+
+  resize: none;
+
+  &:hover {
+    border-color: #e5e5e5;
+  }
+
+  &:focus {
+    border-color: $dark-blue;
+  }
+
+  &:invalid {
+    border-color: #f47e7e;
+  }
+}
+
+.plan-desc__message {
+  display: none;
+
+  position: absolute;
+  bottom: 1px;
+  left: 1px;
+  z-index: 1;
+
+  width: 218px;
+  height: 59px;
+  padding-top: 10px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+
+  color: #ff0000;
+  background-color: #ffefef;
+  border-radius: 4px;
+}
+
+.plan-desc__text:invalid ~ .plan-desc__message {
+  display: block;
+}
+
+.plan-desc__text::placeholder {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: rgba($medium-grey, 0.3);
+}
+
+.plan-desc__country {
+  position: relative;
+
+  margin-bottom: 16px;
+  padding-left: 11px;
+
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 700;
+}
+
+.plan-desc__country::before {
+  content: "";
+
+  position: absolute;
+  top: 6px;
+  left: -2px;
+
+  width: 6px;
+  height: 6px;
+
+  background-color: $dark-slate-blue;
+  border-radius: 50%;
+}
+
+.plan-desc__flag::after {
+  content: "";
+
+  position: absolute;
+  top: -3px;
+  right: 0;
+  z-index: 1;
+
+  width: 84px;
+  height: 24px;
+
+  background-repeat: no-repeat;
+  background-size: 35px 24px,
+    auto;
+  background-position: right,
+    left;
+}
+
+.plan-desc__flag--bosnia::after {
+  background-image: url("../img/flag/flag-bosnia.svg"),
+    linear-gradient(to left, #ffffff 60%, transparent);
+}
+
+.plan-desc__flag--czech::after {
+  background-image: url("../img/flag/flag-czech.svg"),
+    linear-gradient(to left, #ffffff 60%, transparent);
+}
+
+@media (min-width: $tablet-width) {
+  .plan-desc {
+    margin-top: 6px;
+    padding-top: 37px;
+    padding-bottom: 48px;
+  }
+
+  .plan-desc__item {
+    width: 527px;
+  }
+
+  .plan-desc__item:not(:last-child) {
+    margin-bottom: 52px;
+  }
+
+  .plan-desc__country::before {
+    top: 8px;
+    left: 521px;
+
+    width: 15px;
+    height: 15px;
+  }
+
+  .plan-desc__item::before {
+    display: none;
+  }
+
+  .plan-desc__item:not(:last-child)::after {
+    top: 12px;
+    left: auto;
+    right: -3px;
+
+    width: 3px;
+    height: 266px;
+
+    background-color: $dark-slate-blue;
+    border-radius: 1px;
+  }
+
+  .plan-desc__country {
+    margin-bottom: 38px;
+    padding-left: 0;
+
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  .plan-desc__flag::after {
+    top: -8px;
+    right: 26px;
+
+    width: 70px;
+    height: 47px;
+
+    background-size: 70px 47px,
+      auto;
+  }
+
+  .plan-desc__text {
+    width: 500px;
+    height: 142px;
+    padding-top: 17px;
+    padding-right: 20px;
+    padding-bottom: 9px;
+    padding-left: 17px;
+  }
+
+  .plan-desc__text,
+  .plan-desc__text::placeholder,
+  .plan-desc__message {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .plan-desc__message {
+    width: 498px;
+    padding-top: 17px;
+    padding-right: 20px;
+    padding-bottom: 9px;
+    padding-left: 17px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .plan-desc {
+    padding-top: 87px;
+    padding-bottom: 54px;
+  }
+
+  .plan-desc__item {
+    width: 886px;
+  }
+
+  .plan-desc__country::before {
+    top: 6px;
+    left: 768px;
+  }
+
+  .plan-desc__item:not(:last-child)::after {
+    right: 109px;
+  }
+
+  .plan-desc__text {
+    width: 730px;
+    padding-top: 24px;
+    padding-right: 15px;
+    padding-left: 25px;
+  }
+
+  .plan-desc__flag::after {
+    right: 0;
+  }
+
+  .plan-desc__message {
+    width: 728px;
+  }
+}

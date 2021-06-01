@@ -1,0 +1,161 @@
+.destination__list {
+  display: flex;
+
+  @include list-reset;
+
+  margin-top: 15px;
+
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.destination__item {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 4px;
+}
+
+.destination__title {
+  position: relative;
+
+  margin: 0;
+  margin-bottom: 10px;
+
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: normal;
+
+  text-transform: lowercase;
+}
+
+.destination__flag {
+  margin-right: 12px;
+}
+
+.destination__img {
+  width: 16px;
+  height: 18px;
+}
+
+.destination__country {
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 500;
+
+  text-transform: uppercase;
+
+  color: $dark-slate-blue;
+}
+
+@media (min-width: $tablet-width) {
+  .destination__country {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .destination__flag {
+    width: 35px;
+    height: 24px;
+  }
+
+  .destination__img {
+    width: 35px;
+    height: 24px;
+  }
+
+
+  @media (max-width: 1439px) {
+    .destination__list {
+      flex-direction: row;
+    }
+
+    .destination__item {
+      margin-right: 27px;
+    }
+
+    .destination--preview {
+      .destination__item {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+// preview stylesheet
+.destination--preview {
+  .destination__list {
+    margin-left: 26px;
+    margin-right: 10px;
+
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .destination__country {
+    display: none;
+  }
+
+  .destination__flag {
+    position: relative;
+    margin: 0;
+  }
+
+  .destination__item {
+    margin-right: 18px;
+  }
+
+  .destination__img {
+    width: 35px;
+    height: 24px;
+  }
+
+  .destination__flag::before {
+    content: attr(data-tooltip);
+
+    position: absolute;
+    bottom: -72px;
+    left: 50%;
+
+    z-index: 2;
+
+    display: none;
+    padding-top: 16px;
+    padding-right: 28px;
+    padding-bottom: 17px;
+    padding-left: 24px;
+
+    font-size: 20px;
+    line-height: 24px;
+
+    color: $white;
+    background-color: $tooltip-blue;
+
+    border-radius: 4px;
+
+    transform: translateX(-50%);
+  }
+
+  .destination__flag::after {
+    content: "";
+    position: absolute;
+    bottom: -25px;
+    left: 10px;
+
+    display: none;
+    padding-top: 16px;
+    width: 16px;
+    height: 16px;
+
+    background-color: $tooltip-blue;
+
+    transform: rotate(45deg);
+  }
+
+  .destination__flag:hover {
+    &::before,
+    &::after {
+      display: block;
+    }
+  }
+}

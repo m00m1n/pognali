@@ -1,0 +1,43 @@
+.pagination {
+  display: flex;
+  margin-bottom: 110px;
+
+  justify-content: center;
+}
+
+@media (min-width: $tablet-width) {
+  .pagination {
+    width: 688px;
+    margin-bottom: 90px;
+    padding-top: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+    padding-left: 28px;
+
+    justify-content: flex-start;
+    align-items: center;
+
+    background-color: $white;
+    border-radius: 20px;
+  }
+
+  .pagination__pages {
+    width: 420px;
+    margin-right: auto;
+  }
+
+  .pagination__ctrl {
+    width: 79px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .pagination {
+    width: 950px;
+    margin-bottom: 0;
+  }
+
+  .pagination__ctrl {
+    width: 87px;
+  }
+}

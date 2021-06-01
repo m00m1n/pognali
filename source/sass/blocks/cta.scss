@@ -1,0 +1,331 @@
+.cta {
+  position: relative;
+  z-index: 50;
+
+  margin-top: -30px;
+  padding-top: 102px;
+  padding-bottom: 28px;
+
+  text-align: center;
+
+  color: $white;
+  background-color: $dark-blue-grey;
+
+  @include section-bottom-round;
+}
+
+.cta__wrapper {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+}
+
+.cta__lead {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.cta__text {
+  width: 200px;
+  margin: 0;
+  margin-bottom: 28px;
+
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 200;
+}
+
+.cta__link {
+  position: relative;
+
+  color: $light-gold;
+
+  text-decoration: none;
+
+
+  &:hover,
+  &:focus {
+    color: $mango;
+  }
+
+  &:active {
+    color: rgba($mango, 0.3);
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: $light-gold;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    background-color: $mango;
+  }
+
+  &:active::after {
+    background-color: rgba($mango, 0.3);
+  }
+}
+
+.cta__form {
+  display: flex;
+  width: 100%;
+  margin-bottom: 13px;
+
+  justify-content: space-between;
+
+  color: $medium-grey;
+  background-color: $white;
+
+  border-radius: 10px;
+}
+
+.cta__mail {
+  width: 205px;
+  padding: 24px;
+  padding-top: 19px;
+  padding-bottom: 22px;
+
+  font-size: 18px;
+  line-height: 18px;
+
+  border: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  &:hover {
+    background-color: $light-blue;
+    border-color: $light-blue;
+  }
+
+  &:hover::placeholder {
+    color: rgba($medium-grey, 0.5);
+  }
+
+  &:focus {
+    background-color: transparent;
+    border: 4px solid $white;
+    color: $white;
+  }
+
+  &:focus::placeholder {
+    color: $white;
+  }
+
+  &:invalid {
+    background-color: #ffefef;
+    border-color: #ffefef;
+    color: #ff0000;
+  }
+}
+
+.cta__mail:active {
+  color: $white;
+  background-color: $dark-blue-grey;
+}
+
+.cta__mail::placeholder {
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 700;
+
+  color: rgba($medium-grey, 0.3);
+}
+
+.cta__btn {
+  position: relative;
+
+  padding: 0;
+  width: 60px;
+  height: 62px;
+  flex-shrink: 0;
+
+  background-color: $light-gold;
+
+  border: none;
+  border-radius: 10px;
+}
+
+.cta__btn::after {
+  top: 23px;
+  right: 23px;
+}
+
+.cta__btn-text {
+  display: none;
+}
+
+.cta__contacts {
+  margin: 0;
+  margin-top: 2px;
+  margin-left: -30px;
+}
+
+@media (min-width: $tablet-width) {
+  .cta {
+    margin-top: -60px;
+    padding-top: 137px;
+    padding-bottom: 60px;
+  }
+
+  .cta__lead {
+    margin-bottom: 57px;
+  }
+
+  .cta__text {
+    width: 610px;
+    margin-bottom: 62px;
+  }
+
+  .cta__text,
+  .cta__hint {
+    font-size: 28px;
+    line-height: 33px;
+  }
+
+  .cta__form {
+    max-width: 618px;
+    margin-right: auto;
+    margin-bottom: 31px;
+    margin-left: auto;
+
+    border-radius: 20px;
+  }
+
+  .cta__mail {
+    width: 536px;
+    padding-top: 21px;
+    padding-bottom: 18px;
+    padding-left: 34px;
+
+    font-size: 24px;
+    line-height: 24px;
+
+    border-radius: 20px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .cta__mail::placeholder {
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  .cta__btn {
+    width: 82px;
+    height: 81px;
+
+    border-radius: 20px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .cta__btn::after {
+    top: 31px;
+    right: 36px;
+  }
+
+  .cta__hint {
+    width: 610px;
+    margin-bottom: 40px;
+  }
+
+  .cta__break {
+    display: none;
+  }
+
+  .cta__contacts {
+    width: 100%;
+    margin: 0;
+    padding-left: 37px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .cta {
+    padding-top: 165px;
+    padding-bottom: 101px;
+  }
+
+  .cta__wrapper {
+    align-items: flex-start;
+  }
+
+  .cta__lead {
+    margin-right: auto;
+    margin-bottom: 58px;
+    margin-left: auto;
+  }
+
+  .cta__text {
+    max-width: 620px;
+    margin-right: auto;
+    margin-bottom: 57px;
+    margin-left: auto;
+  }
+
+  .cta__form {
+    max-width: 1176px;
+    margin-bottom: 40px;
+  }
+
+  .cta__mail,
+  .cta__btn {
+    min-height: 81px;
+  }
+
+  .cta__mail {
+    width: 850px;
+  }
+
+  .cta__hint {
+    width: 618px;
+    margin-right: auto;
+    margin-bottom: 44px;
+    margin-left: 342px;
+  }
+
+  .cta__break {
+    display: none;
+  }
+
+  .cta__btn {
+    width: 326px;
+
+    text-align: left;
+
+    padding-top: 29px;
+    padding-right: 30px;
+    padding-bottom: 28px;
+    padding-left: 38px;
+  }
+
+  .cta__btn-text {
+    display: inline-block;
+  }
+
+  .cta__btn::after {
+    top: 32px;
+    right: 36px;
+  }
+
+  .cta__contacts {
+    width: 863px;
+    margin-left: 226px;
+    padding: 0;
+
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .cta__icon {
+    margin-right: 26px;
+  }
+}

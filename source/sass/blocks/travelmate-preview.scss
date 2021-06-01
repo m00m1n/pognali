@@ -1,0 +1,183 @@
+.travelmate-preview {
+  position: relative;
+
+  display: flex;
+  width: 270px;
+  padding-bottom: 17px;
+
+  flex-direction: column;
+  align-items: center;
+
+  font-size: 15px;
+  line-height: 18px;
+
+  color: $medium-grey;
+  background-color: $white;
+
+
+  border-radius: 10px;
+}
+
+.travelmate-preview__link {
+  font-size: 21px;
+  line-height: 21px;
+
+  color: $dark-slate-blue;
+
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+.travelmate-preview__photo {
+  display: flex;
+  width: 270px;
+  height: 270px;
+
+  order: -10;
+
+  background-color: lightgrey;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+
+  overflow: hidden;
+
+  text-decoration: none;
+}
+
+.travelmate-preview__img {
+  width: 270px;
+  height: auto;
+
+  transition: transform 0.3s ease-in-out;
+}
+
+.travelmate-preview:hover .travelmate-preview__img,
+.travelmate-preview:focus .travelmate-preview__img {
+  transform: scale(1.05);
+  transition: transform 0.5s ease-in-out;
+}
+
+.travelmate-preview__destination {
+  z-index: 1;
+
+  width: 100%;
+  margin-top: -27px;
+
+  order: -9;
+}
+
+.travelmate-preview__name {
+  position: relative;
+
+  margin: 0;
+  margin-top: 4px;
+  margin-bottom: 15px;
+
+  order: -8;
+}
+
+.travelmate-preview__status::before {
+  content: "";
+
+  position: absolute;
+  left: -16px;
+  top: 7px;
+
+  width: 5px;
+  height: 5px;
+
+  background-color: lightgrey;
+  border-radius: 50%;
+}
+
+.travelmate-preview__status--offline::before {
+  background-color: #f97676;
+}
+
+.travelmate-preview__status--online::before {
+  background-color: #81e31e;
+}
+
+.travelmate-preview__hashtags {
+  width: 180px;
+  margin-bottom: 10px;
+
+  font-size: 16px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.travelmate-preview__lvl {
+  position: absolute;
+  top: 6px;
+  left: 17px;
+
+  background-color: rgba(black, 0.6);
+  border-radius: 50%;
+
+  color: $white;
+}
+
+@media (min-width: $tablet-width) {
+  .travelmate-preview {
+    width: 285px;
+    padding-bottom: 23px;
+
+    border-radius: 20px;
+  }
+
+  .travelmate-preview__photo {
+    width: 285px;
+    height: 285px;
+
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+  }
+
+  .travelmate-preview__photo,
+  .travelmate-preview__img {
+    width: 285px;
+  }
+
+  .travelmate-preview__name {
+    font-size: 24px;
+    line-height: 24px;
+
+    margin-top: 15px;
+  }
+
+  .travelmate-preview__link {
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  .travelmate-preview__status::before {
+    top: 8px;
+    left: -21px;
+
+    width: 7px;
+    height: 7px;
+  }
+
+  .travelmate-preview__hashtags {
+    width: 232px;
+    margin-top: 6px;
+    margin-bottom: 19px;
+
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .travelmate-preview__lvl {
+    top: 11px;
+    left: 21px;
+  }
+}

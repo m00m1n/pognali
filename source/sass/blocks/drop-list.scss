@@ -1,0 +1,154 @@
+.drop-list {
+  display: flex;
+  width: 220px;
+
+  flex-direction: column;
+
+  background-color: $white;
+  overflow: hidden;
+}
+
+.drop-list__alphabet-list {
+  display: flex;
+  width: 220px;
+  margin: 0;
+  margin-bottom: 58px;
+  padding: 0;
+
+  flex-wrap: wrap;
+
+  list-style: none;
+}
+
+.drop-list__letter {
+  display: flex;
+  width: 44px;
+  height: 41px;
+
+  justify-content: center;
+  align-items: center;
+
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+
+  color: $dark-slate-blue;
+  text-decoration: none;
+  box-shadow: -1px 1px 0 0 $midnight-express;
+
+  &:hover {
+    color: $dark-slate-blue;
+
+    box-shadow: inset 0 0 0 1px #959bb2;
+  }
+
+  &:active {
+    color: $white;
+
+    background-color: $dark-slate-blue;
+    box-shadow: none;
+  }
+}
+
+.drop-list__letter--active {
+  color: $white;
+
+  background-color: $dark-slate-blue;
+  box-shadow: none;
+}
+
+.drop-list__contries-list {
+  margin: 0;
+  padding: 0;
+  padding-left: 20px;
+
+  list-style: none;
+}
+
+.drop-list__name {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  letter-spacing: normal;
+
+  text-transform: none;
+
+  text-decoration: none;
+  color: $medium-grey;
+
+  &:hover {
+    color: $dark-slate-blue;
+  }
+
+  &:active {
+    color: rgba($dark-slate-blue, 0.3);
+  }
+}
+
+
+@media (min-width: $tablet-width) {
+  .drop-list {
+    width: 575px;
+    height: 476px;
+    padding-top: 34px;
+    padding-right: 59px;
+    padding-bottom: 44px;
+    padding-left: 27px;
+
+    flex-direction: row;
+  }
+
+  .drop-list__alphabet-list {
+    width: 265px;
+    margin-right: 79px;
+
+    box-shadow: 1px -1px 0 0 $midnight-express;
+  }
+
+  .drop-list__letter {
+    width: 53px;
+    height: 70px;
+
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .drop-list__contries-list {
+    padding-left: 25px;
+  }
+
+  .drop-list__name {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .drop-list {
+    width: 730px;
+    height: 476px;
+    padding-top: 34px;
+    padding-right: 27px;
+    padding-bottom: 34px;
+    padding-left: 27px;
+  }
+
+  .drop-list__alphabet-list {
+    width: 380px;
+    margin: 0;
+
+    box-shadow: none;
+  }
+
+  .drop-list__letter {
+    width: 60px;
+    height: 70px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+
+    border-radius: 4px;
+    border: solid 1px #cbced9;
+
+    box-shadow: none;
+  }
+}

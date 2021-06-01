@@ -1,0 +1,70 @@
+.ctrl {
+  display: flex;
+
+  @include list-reset;
+}
+
+.ctrl__item {
+  background-color: $white;
+}
+
+.ctrl__link {
+  position: relative;
+
+  display: block;
+  width: 135px;
+  min-height: 50px;
+
+  text-align: none;
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+@media (max-width: 767px) {
+  .ctrl__item:first-child {
+    box-shadow: inset -1px 0 0 0 $solitude;
+
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+  }
+
+  .ctrl__item:last-child {
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+  }
+}
+
+.ctrl__link::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 63px;
+
+  width: 10px;
+  height: 20px;
+
+  background-image: url("../img/triangle-arrow-left.svg");
+  background-size: 10px 20px;
+}
+
+.ctrl__link--next::before {
+  transform: rotate(180deg);
+}
+
+
+@media (min-width: $tablet-width) {
+  .ctrl__link {
+    width: 42px;
+  }
+
+  .ctrl__link::before {
+    left: 16px;
+  }
+}

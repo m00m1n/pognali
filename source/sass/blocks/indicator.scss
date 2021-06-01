@@ -1,0 +1,85 @@
+.indicator {
+  display: flex;
+
+  @include list-reset;
+}
+
+@media (max-width: 1470px) {
+  .indicator__text {
+    display: none;
+  }
+}
+
+.indicator__step {
+  position: relative;
+
+  width: 21px;
+  height: 24px;
+}
+
+.indicator__step::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  top: 9px;
+
+  width: 5px;
+  height: 5px;
+
+  background-color: rgba(#000000, 0.6);
+  border-radius: 50%;
+}
+
+.indicator__step--active::before {
+  background-color: $dark-slate-blue;
+}
+
+@media (min-width: $tablet-width) {
+  .indicator__step {
+    width: 34px;
+    height: 24px;
+  }
+
+  .indicator__step::before {
+    left: 29px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .indicator {
+    flex-direction: column;
+  }
+
+  .indicator__text {
+    display: flex;
+    padding-left: 43px;
+
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    color: rgba(#000000, 0.6);
+  }
+
+  .indicator__step {
+    width: 200px;
+    margin-bottom: 19px;
+  }
+
+  .indicator__step::before {
+    left: 1px;
+    top: 6px;
+
+    width: 5px;
+    height: 5px;
+
+    background-color: rgba(#808285, 0.3);
+  }
+
+  .indicator__step--active::before {
+    background-color: $dark-slate-blue;
+  }
+}

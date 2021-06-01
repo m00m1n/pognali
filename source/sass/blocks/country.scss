@@ -1,0 +1,186 @@
+.country {
+  display: flex;
+  flex-direction: column;
+}
+
+.country__photo {
+  order: 1;
+
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.country__wrapper {
+  position: relative;
+
+  display: flex;
+  margin-top: -18px;
+  padding-top: 27px;
+  padding-right: 23px;
+  padding-bottom: 22px;
+  padding-left: 24px;
+
+  justify-content: space-between;
+  flex-shrink: 0;
+  order: 2;
+
+  color: $dark-blue;
+  background-color: $white;
+  border-radius: 10px;
+}
+
+.country__info {
+  position: relative;
+}
+
+.country__title {
+  margin: 0;
+  margin-bottom: 2px;
+  padding: 0;
+
+  font-size: 21px;
+  line-height: 21px;
+  font-weight: 700;
+}
+
+.country__flag {
+  position: absolute;
+  top: -39px;
+  left: 1px;
+
+  width: 35px;
+  height: 24px;
+}
+
+.country__slogan {
+  margin: 0;
+
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 500;
+  color: rgba(68, 68, 68, 0.3);
+}
+
+.country__travels {
+  margin: 0;
+  margin-right: 2px;
+}
+
+.country__total {
+  position: relative;
+  margin: 0;
+  padding-left: 19px;
+
+  color: rgba(68, 68, 68, 0.3);
+}
+
+.country__total::before {
+  content: "";
+
+  position: absolute;
+  top: 5px;
+  left: 0;
+
+  width: 11px;
+  height: 11px;
+
+  background-image: url("../img/user.svg");
+  background-repeat: no-repeat;
+
+  opacity: 0.3;
+}
+
+
+@media (min-width: $tablet-width) {
+  .country {
+    max-width: 616px;
+    max-height: 140px;
+
+    flex-direction: row;
+  }
+
+  .country__wrapper {
+    width: 430px;
+    margin: 0;
+    padding-top: 31px;
+    padding-left: 28px;
+
+    flex-direction: column;
+
+    order: 0;
+    border-radius: 0;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+
+  .country__flag {
+    width: 70px;
+    height: 47px;
+
+    top: -15px;
+    left: 368px;
+  }
+
+  .country__photo {
+    order: 0;
+
+    width: 186px;
+    height: 140px;
+
+    border-radius: 0;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+
+  .country__title {
+    font-size: 24px;
+    line-height: 24px;
+  }
+
+  .country__slogan {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .country__total {
+    padding-left: 32px;
+
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .country__total::before {
+    width: 20px;
+    height: 20px;
+  }
+
+  .country__travels {
+    margin-top: 17px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .country {
+    max-width: 559px;
+  }
+
+  .country__wrapper {
+    width: 374px;
+    padding-top: 25px;
+    padding-left: 31px;
+  }
+
+  .country__travels {
+    margin-top: 22px;
+  }
+
+  .country__photo {
+    width: 186px;
+    height: 140px;
+  }
+
+  .country__flag {
+    top: -2px;
+    left: 307px;
+  }
+}

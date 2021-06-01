@@ -1,0 +1,41 @@
+.countries {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.countries__alphabet {
+  margin-bottom: 50px;
+}
+
+.countries__lists {
+  margin-bottom: 36px;
+}
+
+
+@media (min-width: $tablet-width) {
+  .countries {
+    flex-direction: row;
+  }
+
+  .countries__alphabet {
+    width: 420px;
+    margin: 0;
+    margin-right: 46px;
+  }
+
+  .countries__lists {
+    margin-top: 5px;
+  }
+}
+
+
+@media (min-width: $desktop-width) {
+  .countries__alphabet {
+    display: none;
+  }
+
+  .countries__lists {
+    margin-bottom: 21px;
+  }
+}

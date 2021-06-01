@@ -1,0 +1,150 @@
+.range {
+  position: relative;
+
+  margin-right: 7px;
+  margin-bottom: 26px;
+}
+
+.range__scale {
+  position: relative;
+
+  width: 100%;
+  height: 2px;
+
+  background-color: rgba($dark-slate-blue, 0.2);
+  border-radius: 0.5px;
+}
+
+.range__bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 70%;
+  height: 2px;
+
+  background-color: rgba($dark-slate-blue, 0.2);
+  border-radius: 0.5px;
+}
+
+.range__toggle {
+  position: absolute;
+  top: -4px;
+
+  padding: 0;
+
+  width: 10px;
+  height: 10px;
+
+  background-color: $dark-slate-blue;
+  border-radius: 50%;
+
+  &:hover,
+  &:focus {
+    top: -9px;
+
+    width: 19px;
+    height: 19px;
+  }
+
+  &:active {
+    width: 19px;
+    height: 19px;
+
+    box-shadow: 0 3px 7px 0 rgba(29, 46, 91, 0.35);
+  }
+}
+
+.range__toggle--min {
+  left: 65px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    left: 62px;
+  }
+}
+
+.range__toggle--max {
+  left: 208px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    left: 202px;
+  }
+}
+
+
+@media (min-width: $tablet-width) {
+  .range {
+    width: 277px;
+    margin: 0;
+    margin-top: 8px;
+  }
+
+  .range__scale {
+    height: 3px;
+
+    border-radius: 1.5px;
+  }
+
+  .range__bar {
+    height: 3px;
+
+    border-radius: 1.5px;
+  }
+
+  .range__toggle {
+    top: -5px;
+
+    width: 13px;
+    height: 13px;
+  }
+
+  .range__toggle--min {
+    left: 71px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      left: 68px;
+    }
+  }
+
+  .range__toggle--max {
+    left: 271px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      left: 265px;
+    }
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .range {
+    width: 100%;
+  }
+
+  .range__toggle--min {
+    left: 58px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      left: 55px;
+    }
+  }
+
+  .range__toggle--max {
+    left: 178px;
+
+    &:hover,
+    &:focus,
+    &:active {
+      left: 172px;
+    }
+  }
+}

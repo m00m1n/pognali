@@ -1,0 +1,96 @@
+.lvl-ctrl {
+  position: relative;
+  display: flex;
+}
+
+.lvl-ctrl__input {
+  width: 111px;
+  padding-top: 10px;
+  padding-right: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+
+  font-size: 15px;
+  line-height: 15px;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 0.1em;
+
+  text-align: center;
+  color: $dark-blue;
+
+  border: 1px solid $midnight-express;
+
+  &:hover {
+    border-color: #959bb2;
+  }
+
+  &:focus {
+    border-color: $dark-blue;
+  }
+}
+
+.lvl-ctrl__input--min {
+  z-index: 5;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.lvl-ctrl__input--max {
+  z-index: 10;
+  position: relative;
+  margin-left: -1px;
+
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.lvl-ctrl::after {
+  content: "";
+
+  position: absolute;
+  top: 12px;
+  right: 107px;
+  z-index: 30;
+
+  width: 16px;
+  height: 11px;
+
+  background-color: $midnight-express;
+  border-top: 5px solid $white;
+  border-bottom: 5px solid $white;
+}
+
+@media (min-width: $tablet-width) {
+  .lvl-ctrl {
+    margin: 0;
+    margin-top: -12px;
+  }
+
+  .lvl-ctrl::after {
+    top: 18px;
+    right: 67px;
+  }
+
+  .lvl-ctrl__input {
+    width: 75px;
+    padding-top: 13px;
+    padding-right: 5px;
+    padding-bottom: 9px;
+    padding-left: 5px;
+
+    font-size: 20px;
+    line-height: 20px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .lvl-ctrl {
+    width: 192px;
+    margin: 0;
+  }
+
+  .lvl-ctrl__input {
+    width: 96px;
+  }
+}

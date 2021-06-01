@@ -1,0 +1,176 @@
+.lvl {
+  position: relative;
+
+  width: 60px;
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+}
+
+.lvl__title {
+  margin-bottom: 12px;
+
+  font-size: 15px;
+  line-height: 18px;
+
+  text-transform: lowercase;
+}
+
+.lvl__text {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 700;
+
+  color: $dark-slate-blue;
+}
+
+.lvl__scale {
+  position: absolute;
+  left: -2px;
+  top: 26px;
+
+  transform: rotate(-90deg);
+}
+
+.lvl__num {
+  position: relative;
+
+  display: flex;
+  width: 45px;
+  height: 45px;
+
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    top: -2px;
+    left: -1px;
+
+    width: 45px;
+    height: 45px;
+
+
+    background-size: contain;
+    background-position: center;
+  }
+
+  &--99::before {
+    transform: rotate(-86deg);
+    background-image: url("../img/lvl/lvl-99.svg");
+  }
+
+  &--80::before {
+    transform: rotate(-86deg);
+    background-image: url("../img/lvl/lvl-80.svg");
+  }
+
+  &--50::before {
+    transform: rotate(-86deg);
+    background-image: url("../img/lvl/lvl-50.svg");
+  }
+
+  &--25::before {
+    transform: rotate(-86deg);
+    background-image: url("../img/lvl/lvl-25.svg");
+  }
+}
+
+.lvl__num--preview {
+  width: 54px;
+  height: 54px;
+
+  &::before {
+    top: -3px;
+    left: -3px;
+
+    width: 60px;
+    height: 60px;
+
+
+    background-size: 60px 60px;
+
+    transform: rotate(-90deg);
+  }
+}
+
+.lvl__num::after {
+  content: "level";
+
+  position: absolute;
+  top: 30px;
+  left: 11px;
+
+  display: none;
+  padding-top: 2px;
+  padding-right: 4px;
+  padding-left: 4px;
+
+  font-size: 14px;
+  line-height: 14px;
+
+  border-top: 1px solid $medium-grey;
+  opacity: 0.6;
+}
+
+
+.lvl--preview {
+  .lvl__title {
+    display: none;
+  }
+
+  .lvl__text {
+    margin-bottom: 15px;
+
+    color: $white;
+  }
+
+  .lvl__num::after {
+    display: block;
+
+    border-color: rgba($white, 0.3);
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .lvl__title {
+    display: none;
+  }
+
+  .lvl__scale {
+    left: -11px;
+    top: -5px;
+
+    width: 65px;
+    height: 65px;
+  }
+
+  .lvl__num {
+    width: 54px;
+    height: 54px;
+  }
+
+  .lvl__num::before {
+    top: -3px;
+    left: -3px;
+
+    width: 60px;
+    height: 60px;
+
+
+    background-size: 60px 60px;
+  }
+
+  .lvl__num::after {
+    display: block;
+  }
+
+  .lvl__text {
+    margin-bottom: 15px;
+  }
+}

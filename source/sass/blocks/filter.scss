@@ -1,0 +1,56 @@
+.filter {
+  width: 270px;
+  padding-top: 26px;
+  padding-right: 20px;
+  padding-bottom: 22px;
+  padding-left: 20px;
+
+  font-size: 15px;
+  line-height: 15px;
+
+  color: $medium-grey;
+  background-color: $light-gold;
+  border-radius: 20px;
+}
+
+.filter__title {
+  margin: 0;
+  padding: 0;
+  padding-left: 6px;
+
+  font-size: 22.5px;
+  line-height: 22.5px;
+
+  color: $dark-slate-blue;
+}
+
+@media (min-width: $tablet-width) {
+  .filter {
+    width: 688px;
+    padding-top: 37px;
+    padding-bottom: 38px;
+    padding-left: 28px;
+  }
+
+  .filter__title {
+    margin-bottom: 37px;
+
+    font-size: 30px;
+    line-height: 30px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .filter {
+    width: 285px;
+    margin-left: auto;
+    padding-top: 48px;
+    padding-right: 41px;
+    padding-bottom: 47px;
+    padding-left: 46px;
+  }
+
+  .filter__title {
+    margin-bottom: 18px;
+  }
+}

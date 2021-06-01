@@ -1,0 +1,504 @@
+.country-select__list {
+  display: flex;
+
+  @include list-reset;
+
+  flex-direction: column;
+}
+
+.country-select__item {
+  position: relative;
+
+  display: flex;
+  width: 220px;
+  margin-bottom: 22px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 17px;
+    right: 48px;
+    z-index: 1;
+
+    width: 8px;
+    height: 8px;
+
+    border: 1px solid $white;
+    background-color: $white;
+
+    border-radius: 100%;
+  }
+
+  &--selected::after {
+    border-color: $dark-slate-blue;
+    background-color: $dark-slate-blue;
+  }
+
+  &--add::after {
+    border-color: $midnight-express;
+    background-color: $solitude;
+  }
+
+  &--choose::after {
+    border-color: $midnight-express;
+    background-color: $white;
+  }
+
+  &--active::after {
+    display: none;
+  }
+}
+
+.country-select__item:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  right: 50px;
+
+  width: 5px;
+  height: 10px;
+
+  background-image: url("../img/small-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.country-select__field {
+  position: relative;
+
+  display: flex;
+  width: 168px;
+}
+
+.country-select__btn {
+  position: relative;
+
+  display: flex;
+  padding-top: 12px;
+  padding-right: 12px;
+  padding-bottom: 10px;
+  padding-left: 12px;
+
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: left;
+
+  color: $dark-slate-blue;
+  background-color: transparent;
+}
+
+.country-select__btn--remove {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+
+  width: 21px;
+  height: 21px;
+
+  background-color: $solitude;
+  background-image: url("../img/menu-close.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 9px 9px;
+  border: none;
+  border-radius: 50%;
+
+  &:hover,
+  &:focus {
+    opacity: 0.3;
+  }
+
+  &:active {
+    opacity: 0.05;
+  }
+}
+
+.country-select__item--active .country-select__btn--remove {
+  display: none;
+}
+
+.country-select__btn--selected {
+  width: 168px;
+
+  border: 1px solid $midnight-express;
+  border-radius: 4px;
+
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.country-select__btn--selected::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 50px;
+  height: 100%;
+
+  background-image: url("../img/dropdown-form.svg"),
+    linear-gradient(to left, #ffffff 60%, transparent);
+  background-repeat: no-repeat;
+  background-position: right 10px center,
+    right;
+  background-size: 12px 7px,
+    50px 100%;
+}
+
+.country-select__flag {
+  position: relative;
+
+  display: flex;
+  width: 53px;
+
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  border: 1px solid $midnight-express;
+  border-radius: 4px;
+}
+
+.country-select__flag::before {
+  content: attr(data-tooltip);
+
+  position: absolute;
+  bottom: -72px;
+  left: 50%;
+
+  display: none;
+  padding-top: 16px;
+  padding-right: 28px;
+  padding-bottom: 17px;
+  padding-left: 24px;
+
+  font-size: 20px;
+  line-height: 24px;
+
+  color: $white;
+  background-color: $tooltip-blue;
+
+  border-radius: 4px;
+
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.country-select__flag::after {
+  content: "";
+  position: absolute;
+  bottom: -25px;
+  left: 10px;
+
+  display: none;
+  width: 16px;
+  height: 16px;
+  padding-top: 16px;
+
+  background-color: $tooltip-blue;
+
+  transform: rotate(45deg);
+}
+
+.country-select__flag:hover {
+  &::before,
+  &::after {
+    z-index: 17;
+
+    display: block;
+  }
+}
+
+.country-select__field--choose {
+  position: relative;
+
+  width: 220px;
+}
+
+.country-select__btn--choose {
+  width: 220px;
+
+  background-color: transparent;
+
+  border: 1px solid $midnight-express;
+  border-radius: 4px;
+}
+
+.country-select__btn--choose::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 50px;
+  height: 100%;
+
+  background-image: url("../img/dropdown-form.svg");
+  background-repeat: no-repeat;
+  background-size: 12px 7px;
+  background-position: center right 10px;
+  opacity: 0.2;
+}
+
+.country-select__field--add {
+  width: 220px;
+}
+
+.country-select__btn--add {
+  width: 220px;
+  background-color: $solitude;
+  border-radius: 4px;
+
+  &:hover,
+  &:focus {
+    background-color: #dfe3f0;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    opacity: 0.3;
+  }
+
+  &:active {
+    color: rgba($dark-slate-blue, 0.3);
+    background-color: #dfe3f0;
+  }
+
+  &:active::after {
+    opacity: 0.1;
+  }
+}
+
+.country-select__btn--add::after {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 50px;
+  height: 100%;
+
+  background-image: url("../img/qty-plus.svg");
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
+  background-position: center right 10px;
+  opacity: 0.2;
+}
+
+
+.country-select__dropdown {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  z-index: 10;
+
+  display: none;
+  padding-bottom: 15px;
+
+  box-shadow: 0 20px 50px 0 rgba(25, 33, 68, 0.1);
+  border: 1px solid $midnight-express;
+
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.country-select__dropdown--active {
+  display: flex;
+}
+
+.country-select__btn--active {
+  position: relative;
+
+
+  color: $white;
+  background-color: $dark-slate-blue;
+
+  &:hover::before,
+  &:hover::after {
+    opacity: 1;
+  }
+
+  &:active::before,
+  &:active::after {
+    opacity: 0.1;
+  }
+}
+
+.country-select__btn--active::before,
+.country-select__btn--active::after {
+  content: "";
+
+  position: absolute;
+  top: 20px;
+  right: 13px;
+
+  z-index: 10;
+
+  display: block;
+  width: 13px;
+  height: 1px;
+
+  background: none;
+  background-color: $white;
+  opacity: 0.3;
+}
+
+.country-select__btn--active::before {
+  transform: rotate(45deg);
+}
+
+
+.country-select__btn--active::after {
+  transform: rotate(-45deg);
+}
+
+
+@media (min-width: $tablet-width) {
+  .country-select {
+    padding-top: 40px;
+  }
+
+  .country-select__list {
+    position: relative;
+  }
+
+  .country-select__item {
+    width: 492px;
+    margin-bottom: 15px;
+
+    justify-content: space-between;
+  }
+
+  .country-select__field {
+    width: 370px;
+  }
+
+  .country-select__btn {
+    width: 369px;
+    padding-top: 26px;
+    padding-right: 35px;
+    padding-bottom: 22px;
+    padding-left: 25px;
+
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 500;
+  }
+
+  .country-select__btn--remove {
+    top: 22px;
+    right: -45px;
+
+    width: 24px;
+    height: 24px;
+    padding: 0;
+
+    background-color: transparent;
+    background-size: 24px 21px;
+
+    opacity: 0.1;
+  }
+
+  .country-select__btn--selected::after {
+    background-size: 17px 9px, 50px 100%;
+    background-position: right 26px center, right;
+
+    opacity: 0.3;
+  }
+
+  .country-select__btn--choose::after {
+    background-size: 17px 9px;
+    background-position: center right 26px;
+  }
+
+  .country-select__btn--add::after {
+    background-size: 20px 20px;
+    background-position: center right 25px;
+  }
+
+  .country-select__flag {
+    width: 70px;
+    margin-top: 2px;
+
+    border: none;
+  }
+
+  .country-select__img {
+    width: 70px;
+    height: 47px;
+  }
+
+  .country-select__item:not(:last-child)::before {
+    display: none;
+  }
+
+  .country-select__item::after {
+    top: 27px;
+    right: 89px;
+
+    width: 15px;
+    height: 15px;
+  }
+
+  .country-select__dropdown {
+    top: 69px;
+  }
+
+  .country-select__btn--active::before,
+  .country-select__btn--active::after {
+    top: 33px;
+    right: 21px;
+
+    width: 24px;
+    height: 2px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .country-select {
+    padding-top: 76px;
+    box-shadow: none;
+  }
+
+  .country-select__item {
+    width: 1001px;
+  }
+
+  .country-select__field {
+    width: 730px;
+  }
+
+  .country-select__btn {
+    width: 730px;
+  }
+
+  .country-select__btn--remove {
+    top: 23px;
+    right: 5px;
+    width: 24px;
+  }
+
+  .country-select__flag {
+    margin-right: 114px;
+  }
+
+  .country-select__item::after {
+    right: 218px;
+  }
+
+  .country-select__dropdown {
+    top: 69px;
+  }
+}
+
+// список селекторов для выпадающего списка
+//country-select__btn--active
+// country-select__item--active
+// country-select__dropdown--active
